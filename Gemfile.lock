@@ -41,6 +41,7 @@ GEM
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
     arel (8.0.0)
+    awesome_print (1.8.0)
     bindex (0.5.0)
     builder (3.2.3)
     byebug (10.0.0)
@@ -53,6 +54,7 @@ GEM
       xpath (>= 2.0, < 4.0)
     childprocess (0.8.0)
       ffi (~> 1.0, >= 1.0.11)
+    coderay (1.1.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -66,9 +68,19 @@ GEM
       activesupport (>= 4.0)
     erubi (1.7.0)
     execjs (2.7.0)
+    faraday (0.14.0)
+      multipart-post (>= 1.2, < 3)
+    faraday_middleware (0.12.2)
+      faraday (>= 0.7.4, < 1.0)
     ffi (1.9.21)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    hackernews_ruby (0.0.5)
+      activesupport
+      faraday_middleware
+      hashie
+      multi_json
+    hashie (3.5.7)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
     jbuilder (2.7.0)
@@ -88,9 +100,15 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.11.3)
     multi_json (1.13.1)
+    multipart-post (2.0.0)
     nio4r (2.2.0)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
+    pry (0.11.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.9.0)
+    pry-rails (0.3.6)
+      pry (>= 0.10.4)
     public_suffix (3.0.2)
     puma (3.11.2)
     rack (2.0.4)
@@ -177,12 +195,15 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_print
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
   decent_exposure
+  hackernews_ruby
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
+  pry-rails
   puma (~> 3.7)
   rails (~> 5.1.4)
   sass-rails (~> 5.0)
