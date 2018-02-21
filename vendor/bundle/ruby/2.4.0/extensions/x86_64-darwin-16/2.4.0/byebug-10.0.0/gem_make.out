@@ -1,0 +1,19 @@
+current directory: /Users/madelenecampos/Documents/Projects/personal/hackernews-enhanced-api/vendor/bundle/ruby/2.4.0/gems/byebug-10.0.0/ext/byebug
+/usr/local/opt/ruby/bin/ruby -r ./siteconf20180221-73224-om2hkd.rb extconf.rb
+creating Makefile
+
+current directory: /Users/madelenecampos/Documents/Projects/personal/hackernews-enhanced-api/vendor/bundle/ruby/2.4.0/gems/byebug-10.0.0/ext/byebug
+make "DESTDIR=" clean
+
+current directory: /Users/madelenecampos/Documents/Projects/personal/hackernews-enhanced-api/vendor/bundle/ruby/2.4.0/gems/byebug-10.0.0/ext/byebug
+make "DESTDIR="
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.bundle
+
+current directory: /Users/madelenecampos/Documents/Projects/personal/hackernews-enhanced-api/vendor/bundle/ruby/2.4.0/gems/byebug-10.0.0/ext/byebug
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 byebug.bundle ./.gem.20180221-73224-1tdm3ku/byebug
