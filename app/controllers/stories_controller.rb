@@ -11,7 +11,7 @@ class StoriesController < ApplicationController
   end
 
   def show
-  	render json: { story: Story.story(id) }
+  	render json: { story: Story.single_story(id, count) }
   end
 
 end
