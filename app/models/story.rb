@@ -8,7 +8,7 @@ class Story < ApplicationRecord
       top_stories = stories.map { |s| @client.get_item(s) }
     end
 
-    def story id
+    def single_story id, count=0
       story = @client.get_item(id) 
       payload = 
       {
@@ -16,7 +16,7 @@ class Story < ApplicationRecord
         descendents: story.descendents,
         id: story.id,
         kids: story.kids.take(10),
-        comments: story.kids.take(10).map { |comment| @client.get_item(comment) },
+        comments: count ? story[:kids].take(count.to_i).map { |comment| @client.get_item(comment) } : story.kids.take(10).map { |comment| @client.get_item(comment) },
         score: story.score,
         time: story.time,
         title: story.title,
