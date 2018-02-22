@@ -25,6 +25,22 @@ class Story < ApplicationRecord
       }
     end
 
+    def sort title=nil, by=nil, score=0, count=0
+      stories = top_stories
+
+      if title
+        stories.select { |story| story.title == title }  
+      elsif by
+        stories.select { |story| story.by == by }
+      elsif score
+        stories.select { |story| story.score == (score.to_i) }
+      elsif count
+        top_stories.take(count.to_i)
+      else
+        stories
+      end
+    end
+
   end
 
 end
