@@ -1,22 +1,22 @@
 class Story < ApplicationRecord
+  @client = HackernewsRuby::Client.new
 
   class << self 
 
     def top_stories
-      client = HackernewsRuby::Client.new
-      stories = client.top_stories.take(10)
-      top_stories = stories.map { |s| client.get_item(s) }
+      stories = @client.top_stories.take(10)
+      top_stories = stories.map { |s| @client.get_item(s) }
     end
 
     def story id
-      client = HackernewsRuby::Client.new
-      story = client.get_item(id) 
+      story = @client.get_item(id) 
       payload = 
       {
         by: story.by,
         descendents: story.descendents,
         id: story.id,
-        comments: story.kids.take(10),
+        kids: story.kids.take(10),
+        comments: story.kids.take(10).map { |comment| @client.get_item(comment) },
         score: story.score,
         time: story.time,
         title: story.title,
