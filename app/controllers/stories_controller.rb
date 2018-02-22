@@ -1,6 +1,6 @@
 class StoriesController < ApplicationController
 
-	 expose(:id) { params[:id] }
+	expose(:id) { params[:id] }
 
   def index
   	render json: { top_stories: Story.top_stories }
