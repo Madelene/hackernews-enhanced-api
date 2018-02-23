@@ -11,7 +11,13 @@ class StoriesController < ApplicationController
   end
 
   def show
-  	render json: { story: Story.single_story(id, count) }
+  	single_story = Story.single_story(id, count)
+  	
+  	if single_story
+  		render json: { story: single_story }
+    else
+  	  render json: { message: "This story does not exist." }, status: 200
+  	end
   end
 
 end
