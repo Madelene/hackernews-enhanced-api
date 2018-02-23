@@ -22,4 +22,18 @@ RSpec.describe StoriesController, type: :controller do
     end
   end
 
+  context "GET show" do
+    it "returns a successful 200 response" do
+      get :show, params: { id: story.id }, format: :json
+      expect(response).to have_http_status(200)
+    end
+    it "requires the :id parameter" do
+      expect { get :show }.to raise_error(ActionController::UrlGenerationError)
+    end
+    it "responds with json" do
+      get :show, params: { id: story.id }, format: :json 
+      expect(response.content_type).to eq "application/json"
+    end
+  end
+
 end
